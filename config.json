@@ -1,18 +1,18 @@
 {
-  "www.nu.nl":
-  [
+  "www.nu.nl": [
     "//a[contains(@href, '<keyword>')]/parent::div/parent::li",
     "//a[contains(@href, '<keyword>')]/parent::div[contains(@class, 'headline')]",
     "//a[contains(@href, '<keyword>')]/parent::li",
     "//div[@class='block toast adblocker']"
   ],
-  "tweakers.net":
-  [
+  "tweakers.net": [
     "//div[@class='notificationsContainer']"
   ],
-  "nos.nl":
-  [
+  "nos.nl": [
     "//div[@id='ccm_notification_wrapper']",
     "//a[contains(@href, '<keyword>')]/parent::li"
+  ],
+  "www.msn.com": [
+    "//a[contains(@href, '<keyword>')]/parent::li[contains(@class, 'index')]"
   ]
 }

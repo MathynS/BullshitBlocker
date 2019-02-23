@@ -1,5 +1,8 @@
-let addButton = document.getElementById('addKeyword');
+let addButton = document.getElementById('add-keyword');
 let tagsBox = document.getElementById('tags');
+let alert = document.getElementById('alert');
+let closeAlertButton = document.getElementById('close-alert');
+let changeMessage = document.getElementById('change-message');
 
 let deleteTag = function (button) {
     let deleteTag = button.target.parentNode;
@@ -13,6 +16,7 @@ let deleteTag = function (button) {
         chrome.storage.local.set({userKeywords: userKeywords}, function () {
         });
     });
+    showChangeMessage();
     tagsBox.removeChild(deleteTag)
 };
 
@@ -29,20 +33,43 @@ function createTag(tagName) {
     tagsBox.appendChild(newTag);
 }
 
+function setWarning(text) {
+    alert.childNodes[0].nodeValue = text;
+    alert.style.display = 'block';
+}
+
+function closeAlert() {
+    alert.style.display = 'none';
+}
+
+function showChangeMessage() {
+    changeMessage.style.display = 'block';
+}
+
 addButton.onclick = function() {
     let newKeyword = document.getElementById('keyword').value;
     if (newKeyword.length === 0 ) {
+        setWarning('Keyword should not be empty!');
         return
     }
     createTag(newKeyword);
-    document.getElementById('keyword').value = '';
+    let userKeywords;
     chrome.storage.local.get({userKeywords: []}, function (result) {
-        let userKeywords = result.userKeywords;
+        userKeywords = result.userKeywords;
+        if (userKeywords.indexOf(newKeyword) !== -1) {
+            setWarning('Keyword "' + newKeyword +'" already exists!');
+            return
+        }
         userKeywords.push(newKeyword);
         chrome.storage.local.set({userKeywords: userKeywords}, function () {
+            closeAlert();
+            document.getElementById('keyword').value = '';
+            showChangeMessage()
         });
     });
 };
+
+closeAlertButton.onclick = closeAlert;
 
 chrome.storage.local.get({userKeywords: []}, function (result) {
     console.log(result.userKeywords);

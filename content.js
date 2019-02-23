@@ -12,6 +12,9 @@ function getElementsByXPath(xpath, parent)
 function listener() {
     let removeElements = [];
     let domainXpaths = removeXpaths[document.domain];
+    if (domainXpaths === undefined) {
+        return
+    }
     for (let i = 0; i < domainXpaths.length; i++) {
         if (domainXpaths[i].indexOf('<keyword>') === - 1) {
             removeElements.push.apply(removeElements, getElementsByXPath(domainXpaths[i]));
@@ -31,16 +34,19 @@ function listener() {
 let keywords = [];
 let removeXpaths = [];
 let loaded = false;
-const url = chrome.runtime.getURL('config.json');
+let configUrl = 'https://mathyns.github.io/BullshitBlocker/config.json';
 
-fetch(url)
-    .then((response) => response.json()) //assuming file contains json
-    .then((json) => {
-        removeXpaths = json;
+let xhr = new XMLHttpRequest();
+xhr.open("GET", configUrl, true);
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+        removeXpaths = JSON.parse(xhr.responseText);
         console.log(removeXpaths);
         loaded = true;
         listener()
-    });
+    }
+};
+xhr.send();
 
 chrome.storage.local.get({userKeywords: []}, function (result) {
     keywords = result.userKeywords

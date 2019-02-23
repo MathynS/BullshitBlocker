@@ -5,11 +5,17 @@
             html { min-width: 400px; padding: 5px 5px 5px 5px; }
             .badge { margin-right: 5px; }
             .hover:hover { cursor: pointer; }
+            #alert { display: none; }
+            #change-message { display: none; }
         </style>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
+
+        <div class="alert alert-warning alert-dismissable" id="alert">
+            <a href="#" class="close" id="close-alert">&times;</a>
+        </div>
 
         <form>
             <div class="form-group">
@@ -20,7 +26,7 @@
                     </div>
                     <input type="text" class="form-control" id="keyword" placeholder="Kardashians" required>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-info" id="addKeyword" type="button">Add</button>
+                        <button class="btn btn-outline-info" id="add-keyword" type="button">Add</button>
                     </div>
 
                 </div>
@@ -30,6 +36,8 @@
         <div id="tags">
 
         </div>
+
+        <em id="change-message"><br>Please refresh the page before changes are effective.</em>
 
     <script src="popup.js"></script>
     </body>
