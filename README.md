@@ -6,6 +6,8 @@ Filter these stupid articles from your favourite news website or blog and start 
 This plugin allows you to enter a list of keywords that you want to filter and will try it's best to filter these 
 articles for you on selected websites. 
 
+![Before and After](https://mathyns.github.com/BullshitBlocker/images/before_after.png)
+
 ## Supported websites
 
 Currently the following websites are supported:
@@ -26,9 +28,11 @@ In these xpaths you can use the string '\<keyword\>', which will be replaced by 
 Usually you want the xpath on an \<a\> tag or the parent of this tag.
 
 Example xpath:
+
 > //div[@id='ccm_notification_wrapper']
 
-Note that a xpath will always start with //. 
+Note that a xpath will always start with '//', this double slash indicates to search for all nodes, no matter where they 
+are located. 
 Also make sure that the xpath does not remove important elements on a site such as navigation menus etc.
 A good way to test your xpath is by inspect the webpage (press F12 or Crtl + Shift + I), search here by pressing 
 Crtl + F and paste your xpath here.
