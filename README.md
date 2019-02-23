@@ -6,7 +6,17 @@ Filter these stupid articles from your favourite news website or blog and start 
 This plugin allows you to enter a list of keywords that you want to filter and will try it's best to filter these 
 articles for you on selected websites. 
 
-![Before and After](https://mathyns.github.com/BullshitBlocker/images/before_after.png)
+![Before and After](https://mathyns.github.io/BullshitBlocker/images/before_after.png)
+
+In the example image we can see on the left 2 articles about a marriage and the oscars. 
+On the right side, we see the plugin active, with the keywords 'oscars', and 'oscars'.
+As expected these 2 articles are filtered and we can focus on the important news! 
+
+## Usage
+When you are on a supported website (see next section) the plugin will try to filter out the items containing your keywords.
+You can add keywords by clicking on the plugin button first (![Logo](https://mathyns.github.io/BullshitBlocker/images/icon16.png)).
+A popup will be shown with an input field to enter new keywords.
+Existing keybords can be removed by clicking on the '&times;' next to the keyword.
 
 ## Supported websites
 
