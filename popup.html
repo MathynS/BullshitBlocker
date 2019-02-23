@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html { min-width: 400px; padding: 5px 5px 5px 5px; }
+            .badge { margin-right: 5px; }
+            .hover:hover { cursor: pointer; }
+        </style>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <form>
+            <div class="form-group">
+
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Keyword</span>
+                    </div>
+                    <input type="text" class="form-control" id="keyword" placeholder="Kardashians" required>
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-info" id="addKeyword" type="button">Add</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+
+        <div id="tags">
+
+        </div>
+
+    <script src="popup.js"></script>
+    </body>
+</html>

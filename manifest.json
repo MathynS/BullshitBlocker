@@ -1,0 +1,25 @@
+{
+  "name": "BullshitBlocker3000",
+  "description": "Filter worthless content out of your favourite sites",
+  "version": "1.0",
+  "permissions": ["declarativeContent", "activeTab", "storage"],
+  "web_accessible_resources": [
+    "config.json"
+  ],
+  "icons": {
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
