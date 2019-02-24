@@ -9,6 +9,15 @@ function getElementsByXPath(xpath, parent)
     return results;
 }
 
+function replaceImage(element) {
+    let height = element.height;
+    let width = element.width;
+    element.src = 'https://mathyns.github.io/BullshitBlocker/images/empty_pixel.png';
+    element['data-src'] = 'https://mathyns.github.io/BullshitBlocker/images/empty_pixel.png';
+    element.style.width = width + 'px';
+    element.style.height = height + 'px'
+}
+
 function listener() {
     let removeElements = [];
     let domainXpaths = removeXpaths[document.domain];
@@ -28,11 +37,17 @@ function listener() {
         }
     }
     for (let i = 0; i < removeElements.length; i++) {
-        try {
-            console.log(removeElements[i]);
-            removeElements[i].parentNode.removeChild(removeElements[i])
-        } catch (e) {
-            console.log(e)
+        if (removeElements[i].value !== undefined) {
+            removeElements[i].value = '#';
+            console.log(removeElements[i])
+        } else if (removeElements[i].tagName.toLowerCase() === 'img') {
+            replaceImage(removeElements[i]);
+        } else {
+            try {
+                removeElements[i].parentNode.removeChild(removeElements[i])
+            } catch (e) {
+                console.log(e)
+            }
         }
     }
 }

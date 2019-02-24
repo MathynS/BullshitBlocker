@@ -119,5 +119,15 @@
   "www.metronieuws.nl": [
     "//a[contains(@href, '<keyword>')]/parent::div[1]",
     "//a[contains(@href, '<keyword>')]"
+  ],
+  "www.rtlnieuws.nl": [
+    "//a[contains(@href, '<keyword>')]/parent::div[contains(@class, 'opening-block')][1]",
+    "//a[contains(@href, '<keyword>')]/parent::div[contains(@class, 'six_articles')][1]",
+    "//a[contains(@href, '<keyword>')]/@href",
+    "//a[contains(@href, '<keyword>')]//figure/img",
+    "//a[contains(@href, '<keyword>')]//div[@class='opening__title']",
+    "//a[contains(@href, '<keyword>')]/parent::div[@class='tabs-item']",
+    "//a[contains(@href, '<keyword>')]/parent::div[contains(@class, 'grid-block')]",
+    "//a[contains(@href, '<keyword>')]/parent::li[contains(@class, 'best-of-the-day')]"
   ]
 }
