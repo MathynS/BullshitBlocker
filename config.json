@@ -14,5 +14,110 @@
   ],
   "www.msn.com": [
     "//a[contains(@href, '<keyword>')]/parent::li[contains(@class, 'index')]"
+  ],
+  "www.theguardian.com": [
+    "//a[contains(@href, '<keyword>')]/parent::div[@class='fc-item__container']/parent::div/parent::li",
+    "//div[@class='contributions-row__wrapper']"
+  ],
+  "news.yahoo.com": [
+    "//a[contains(@href, '<keyword>')]/parent::div[contains(@class, 'ImgFilterHover')]",
+    "//a[contains(@href, '<keyword>')]/parent::li[contains(@class, 'Whs(n)')]",
+    "//a[contains(@href, 'trump')]/parent::h3/parent::div/parent::div/parent::div/parent::li"
+  ],
+  "news.google.com": [
+    "//span[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '<keyword>')]/ancestor::article[1]"
+  ],
+  "www.huffingtonpost.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::div[contains(@class, 'card card')][1]"
+  ],
+  "cnn.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]"
+  ],
+  "nytimes.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]/parent::div"
+  ],
+  "www.foxnews.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]"
+  ],
+  "www.nbcnews.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::div[contains(@class, 'pancake-item')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'article')][1]"
+  ],
+  "www.dailymail.co.uk": [
+    "//a[contains(translate(@href, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '<keyword>')]/ancestor::div[contains(@class, 'article')][1]",
+    "//a[contains(translate(@href, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '<keyword>')]/ancestor::li[1]"
+  ],
+  "www.washingtonpost.com": [
+    "//div[contains(@class, 'content-subscription')]",
+    "//a[contains(@href, '<keyword>')]/ancestor::div[contains(@class, 'moat-trackable')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'pm-content')][1]"
+  ],
+  "www.wsj.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::div[contains(@class, 'wsj-card')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'wsj-popular-item')][1]"
+  ],
+  "abcnews.go.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'headlines-li')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::figure/parent::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::div[contains(@class, 'item slick-slide')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::figure[contains(@class, 'feed-item-figure')]/parent::li[1]"
+  ],
+  "www.bbc.com": [
+    "//h3[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '<keyword>')]/ancestor::div[contains(@class, 'top-stories')][1]",
+    "//h3[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '<keyword>')]/ancestor::div[contains(@class, 'gel-layout__item')][1]",
+    "//span[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), '<keyword>')]/ancestor::li[contains(@class, 'gel-layout__item')][1]"
+  ],
+  "eu.usatoday.com": [
+    "//a[contains(@href, '<keyword>')]"
+  ],
+  "www.latimes.com": [
+    "//a[contains(@href, '<keyword>')]/ancestor::div[contains(@class, 'card')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'collection-item')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::div[@class='pb-feature'][1]"
+  ],
+  "www.ad.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.bd.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.ed.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.tubantia.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.bndestem.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.pzc.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.destentor.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.gelderlander.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'articles-list__item')][1]"
+  ],
+  "www.trouw.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::li[contains(@class, 'hero-teaser')][1]",
+    "//a[contains(@href, '<keyword>')]/ancestor::article[contains(@class, 'teaser')][1]",
+    "//a[contains(@href, '<keyword>')]/h2"
+  ],
+  "www.volkskrant.nl": [
+    "//a[contains(@href, '<keyword>')]/ancestor::article[1]"
+  ],
+  "www.metronieuws.nl": [
+    "//a[contains(@href, '<keyword>')]/parent::div[1]",
+    "//a[contains(@href, '<keyword>')]"
   ]
 }

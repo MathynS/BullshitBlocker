@@ -4,7 +4,8 @@
   "version": "1.0",
   "permissions": ["declarativeContent", "activeTab", "storage"],
   "web_accessible_resources": [
-    "https://mathyns.github.io/BullshitBlocker/config.json"
+    "https://mathyns.github.io/BullshitBlocker/config.json",
+    "config.json"
   ],
   "icons": {
     "128": "images/icon128.png",

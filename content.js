@@ -12,6 +12,7 @@ function getElementsByXPath(xpath, parent)
 function listener() {
     let removeElements = [];
     let domainXpaths = removeXpaths[document.domain];
+    console.log(document.domain, domainXpaths);
     if (domainXpaths === undefined) {
         return
     }
@@ -27,26 +28,41 @@ function listener() {
         }
     }
     for (let i = 0; i < removeElements.length; i++) {
-        removeElements[i].parentNode.removeChild(removeElements[i])
+        try {
+            console.log(removeElements[i]);
+            removeElements[i].parentNode.removeChild(removeElements[i])
+        } catch (e) {
+            console.log(e)
+        }
     }
 }
 
 let keywords = [];
 let removeXpaths = [];
 let loaded = false;
+const localConfig = chrome.runtime.getURL('config.json');
 let configUrl = 'https://mathyns.github.io/BullshitBlocker/config.json';
-
 let xhr = new XMLHttpRequest();
-xhr.open("GET", configUrl, true);
-xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-        removeXpaths = JSON.parse(xhr.responseText);
-        console.log(removeXpaths);
-        loaded = true;
-        listener()
-    }
-};
-xhr.send();
+
+if ('update_url' in chrome.runtime.getManifest()) {
+    xhr.open("GET", configUrl, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            removeXpaths = JSON.parse(xhr.responseText);
+            loaded = true;
+            listener()
+        }
+    };
+    xhr.send();
+} else {
+    fetch(localConfig)
+        .then((response) => response.json()) //assuming file contains json
+        .then((json) => {
+            removeXpaths = json;
+            loaded = true;
+            listener()
+        });
+}
 
 chrome.storage.local.get({userKeywords: []}, function (result) {
     keywords = result.userKeywords
